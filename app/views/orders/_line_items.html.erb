@@ -9,7 +9,9 @@
       </tr>
     </thead>
     <tbody>
-
+      <% @order.line_items.each do |item| %>
+        <%= render 'line_item', product: item.product, quantity: item.quantity.to_i %>
+      <% end %>
     </tbody>
     <tfoot>
       <tr>
@@ -17,7 +19,7 @@
           TOTAL:
         </th>
         <th>
-
+          <%= humanized_money_with_symbol (@order.total_cents / 100.0) %>
         </th>
       </tr>
     </tfoot>
