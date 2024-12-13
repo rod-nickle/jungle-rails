@@ -34,7 +34,7 @@
             <%# Categories %>
           <%# </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
-            <% Category.all.each do |category| %>
+            <% Category.all.order(name: :asc).each do |category| %>
             <li class="nav-item">
               <%= link_to category.name, category, class: "nav-link" %>
             </li>
@@ -60,6 +60,7 @@
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><%= link_to 'Dashboard', [:admin, :root], class: "nav-link" %></li>
             <li><%= link_to 'Products', [:admin, :products], class: "nav-link" %></li>
+            <li><%= link_to 'Categories', [:admin, :categories], class: "nav-link" %></li>
           </ul>
         </li>
         <li class="nav-item end-0">
