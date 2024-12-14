@@ -1,0 +1,19 @@
+<section class="Sessions-new">
+
+  <header class="page-header">
+    <h1>Login</h1>
+  </header>
+
+    <%= form_tag :login do %>
+      <div class="form-group">
+        Email: <%= text_field_tag :email, nil, autocomplete:"off" %>
+        <br>
+      </div>
+      <div class="form-group">
+        Password: <%= password_field_tag :password, nil, autocomplete:"off" %>
+        <br>
+      </div>
+      <%= submit_tag "Submit", class: 'btn btn-primary' %>
+    <% end %>
+
+</section>
