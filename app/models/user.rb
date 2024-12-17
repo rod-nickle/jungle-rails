@@ -8,11 +8,8 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
 
 
-  def self.authenticate_with_credentials(email, password)
-    # Remove leading/trailing spaces and force to lowercase.
-    email = email.downcase.strip
-    
-    user = self.where("lower(email) = ?", [email]).first
+  def self.authenticate_with_credentials(email, password)  
+    user = self.where("LOWER(email) = LOWER(?)", [email.strip]).first
     if user && user.authenticate(password)
       return user
     end
