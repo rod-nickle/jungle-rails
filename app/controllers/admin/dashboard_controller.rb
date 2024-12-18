@@ -1,8 +1,4 @@
-class Admin::DashboardController < ApplicationController
-  username = Rails.configuration.basic_auth[:username]
-  password = Rails.configuration.basic_auth[:password]
-  http_basic_authenticate_with name: username, password: password
-
+class Admin::DashboardController < Admin::BaseController
   def show
     @total_products = Product.count
     @total_quantity = Product.sum("quantity")
