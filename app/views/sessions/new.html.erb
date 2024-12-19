@@ -4,16 +4,16 @@
     <h1>Login</h1>
   </header>
 
-    <%= form_tag :login do %>
-      <div class="form-group">
-        Email: <%= text_field_tag :email, nil, autocomplete:"off" %>
-        <br>
-      </div>
-      <div class="form-group">
-        Password: <%= password_field_tag :password, nil, autocomplete:"off" %>
-        <br>
-      </div>
-      <%= submit_tag "Submit", class: 'btn btn-primary' %>
-    <% end %>
+  <%= form_tag :login do %>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <%= text_field_tag :email, nil, autocomplete: "off", class: "form-control", id: "email" %>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <%= password_field_tag :password, nil, autocomplete: "off", class: "form-control", id: "password" %>
+    </div>
+    <%= submit_tag "Login", class: 'btn btn-primary' %>
+  <% end %>
 
 </section>
